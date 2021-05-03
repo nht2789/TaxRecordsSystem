@@ -1,11 +1,11 @@
-com/trs/util/TaxUtilities.java
- com.trs.util.TaxUtilities
-com/trs/presenter/TaxManagementPresenter.java
- com.trs.presenter.TaxManagementPresenter
 com/trs/repo/TaxPayerRepository.java
  com.trs.repo.TaxPayerRepository
 com/trs/entity/TaxPayer.java
  com.trs.entity.TaxPayer
+com/trs/util/TaxUtilities.java
+ com.trs.util.TaxUtilities
+com/trs/presenter/TaxManagementPresenter.java
+ com.trs.presenter.TaxManagementPresenter
 com/trs/ui/TaxManagementMainView.java
  com.trs.ui.TaxManagementMainView
  com.trs.ui.TaxManagementMainView$1
@@ -13,5 +13,7 @@ com/trs/ui/TaxManagementMainView.java
  com.trs.ui.TaxManagementMainView$3
  com.trs.ui.TaxManagementMainView$4
  com.trs.ui.TaxManagementMainView$5
+ com.trs.ui.TaxManagementMainView$6
+ com.trs.ui.TaxManagementMainView$7
 com/trs/TaxRecordSystemApplication.java
  com.trs.TaxRecordSystemApplication

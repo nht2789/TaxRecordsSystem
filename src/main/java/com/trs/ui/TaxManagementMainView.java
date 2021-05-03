@@ -7,6 +7,8 @@ package com.trs.ui;
 
 import com.trs.presenter.TaxManagementPresenter;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -33,25 +35,25 @@ public class TaxManagementMainView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtTFN = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtFirstName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtLastName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtAddress = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtPhone = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtDeduct = new javax.swing.JTextField();
+        txtIncome = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txttaxHeld = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtTaxToBeReturn = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -65,9 +67,9 @@ public class TaxManagementMainView extends javax.swing.JFrame {
 
         jLabel1.setText("Tax File Number (TFN)  ");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtTFN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtTFNActionPerformed(evt);
             }
         });
 
@@ -77,10 +79,10 @@ public class TaxManagementMainView extends javax.swing.JFrame {
 
         jLabel4.setText("Address  ");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtAddress.setColumns(20);
+        txtAddress.setLineWrap(true);
+        txtAddress.setRows(5);
+        jScrollPane1.setViewportView(txtAddress);
 
         jLabel5.setText("Phone Number   ");
 
@@ -97,10 +99,10 @@ public class TaxManagementMainView extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTFN, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFirstName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(79, 79, 79)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,11 +110,11 @@ public class TaxManagementMainView extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))))))
+                                        .addComponent(txtPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(575, 575, 575)
-                        .addComponent(jTextField4)))
+                        .addComponent(txtLastName)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -122,22 +124,22 @@ public class TaxManagementMainView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTFN, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField2))
+                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFirstName))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -154,16 +156,16 @@ public class TaxManagementMainView extends javax.swing.JFrame {
 
         jLabel8.setText("Tax Held");
 
-        jTextField7.setEditable(false);
-        jTextField7.setForeground(new java.awt.Color(255, 0, 51));
+        txttaxHeld.setEditable(false);
+        txttaxHeld.setForeground(new java.awt.Color(255, 0, 51));
 
         jLabel9.setText("Tax To Be Returned ");
 
-        jTextField8.setEditable(false);
-        jTextField8.setForeground(new java.awt.Color(255, 0, 51));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtTaxToBeReturn.setEditable(false);
+        txtTaxToBeReturn.setForeground(new java.awt.Color(255, 0, 51));
+        txtTaxToBeReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtTaxToBeReturnActionPerformed(evt);
             }
         });
 
@@ -178,16 +180,16 @@ public class TaxManagementMainView extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                    .addComponent(jTextField7))
+                    .addComponent(txtIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                    .addComponent(txttaxHeld))
                 .addGap(79, 79, 79)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jTextField8))
+                    .addComponent(txtDeduct, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                    .addComponent(txtTaxToBeReturn))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -197,20 +199,30 @@ public class TaxManagementMainView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDeduct, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txttaxHeld, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTaxToBeReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Reset");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seacrh TFS or Last Name (Input * for Browsing All)    ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 11))); // NOI18N
 
@@ -301,17 +313,25 @@ public class TaxManagementMainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFindActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtTaxToBeReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTaxToBeReturnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtTaxToBeReturnActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        this.presenter.findButtonPressed();
+        this.presenter.find();
     }//GEN-LAST:event_btnFindActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtTFNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTFNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtTFNActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         this.presenter.resetTaxRecord();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.presenter.saveOrUpdateTaxRecord();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,16 +389,16 @@ public class TaxManagementMainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextArea txtAddress;
+    private javax.swing.JTextField txtDeduct;
     public javax.swing.JTextField txtFind;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtIncome;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtTFN;
+    private javax.swing.JTextField txtTaxToBeReturn;
+    private javax.swing.JTextField txttaxHeld;
     // End of variables declaration//GEN-END:variables
 
     public void setPresenter(TaxManagementPresenter presenter){
@@ -388,4 +408,71 @@ public class TaxManagementMainView extends javax.swing.JFrame {
     public void showFindWarningMsg(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
+
+    public void loadTaxRecord(Long taxFileNumber, String firstName, String lastName, String address, 
+            String phone, Long income, Long deductibleAmount, Long taxHeld, Long taxToBeReturned) {
+        txtTFN.setText(String.valueOf(taxFileNumber));
+        txtFirstName.setText(firstName);
+        txtLastName.setText(lastName);
+        txtAddress.setText(address);
+        txtPhone.setText(phone);
+        txtIncome.setText(String.valueOf(income));
+        txtDeduct.setText(String.valueOf(deductibleAmount));
+        txttaxHeld.setText(String.valueOf(taxHeld));
+        txtTaxToBeReturn.setText(String.valueOf(taxToBeReturned));        
+    }
+    
+        public void resetTaxRecord() {
+        txtTFN.setText("");
+        txtFirstName.setText("");
+        txtLastName.setText("");
+        txtAddress.setText("");
+        txtPhone.setText("");
+        txtIncome.setText("");
+        txtDeduct.setText("");
+        txttaxHeld.setText("");
+        txtTaxToBeReturn.setText("");        
+    }
+
+    public JTextArea getTxtAddress() {
+        return txtAddress;
+    }
+
+    public JTextField getTxtDeduct() {
+        return txtDeduct;
+    }
+
+    public JTextField getTxtFind() {
+        return txtFind;
+    }
+
+    public JTextField getTxtFirstName() {
+        return txtFirstName;
+    }
+
+    public JTextField getTxtIncome() {
+        return txtIncome;
+    }
+
+    public JTextField getTxtLastName() {
+        return txtLastName;
+    }
+
+    public JTextField getTxtPhone() {
+        return txtPhone;
+    }
+
+    public JTextField getTxtTFN() {
+        return txtTFN;
+    }
+
+    public JTextField getTxtTaxToBeReturn() {
+        return txtTaxToBeReturn;
+    }
+
+    public JTextField getTxttaxHeld() {
+        return txttaxHeld;
+    }
+        
+        
 }
