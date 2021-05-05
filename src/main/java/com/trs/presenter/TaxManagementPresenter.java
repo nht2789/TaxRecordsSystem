@@ -3,10 +3,11 @@ package com.trs.presenter;
 import com.trs.entity.TaxPayer;
 import com.trs.repo.TaxPayerRepository;
 import com.trs.ui.TaxManagementMainView;
+import com.trs.ui.TaxPayerListView;
 import com.trs.util.TaxUtilities;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -38,20 +39,26 @@ public class TaxManagementPresenter {
             System.out.println("Searching by TFN");
             model = taxPayerRepo.findByTaxFileNumber(Long.valueOf(inputFindValue));
             System.out.println(model);
-            loadTaxRecord(model);
+            if(null == model){
+                showInfoDialog("No tax payer(s) found");
+            } else {
+                loadTaxRecord(model);
+            }
         }
         //searching by Last name
         else if (!inputFindValue.equals("*")){
             System.out.println("Searching by last name");
             List<TaxPayer> taxPayers = taxPayerRepo.findByLastName(inputFindValue);
-            if(taxPayers.size() == 1){
+            if (taxPayers == null || taxPayers.isEmpty()){
+                showInfoDialog("No tax payer(s) found");
+            } else if(taxPayers.size() == 1){
                 model = taxPayers.get(0);
                 loadTaxRecord(model);
-            } else {
+            } else if ( taxPayers.size() > 1) {
                 showTableOfResults(taxPayers);
             }
         } else {
-            //browse all TFN
+            //browse all Tax payers
             System.out.println("Browsing all records");
             Iterable<TaxPayer> results = taxPayerRepo.findAll();
             List<TaxPayer> taxPayers = new ArrayList<>();
@@ -91,7 +98,9 @@ public class TaxManagementPresenter {
     }
 
     private void showTableOfResults(List<TaxPayer> taxPayers) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TaxPayerListView taxPayerListView = new TaxPayerListView();
+        TaxPayerListPresenter taxPayerListPresenter = new TaxPayerListPresenter(taxPayers, taxPayerListView, this);
+        taxPayerListPresenter.showView();
     }
 
     public void resetTaxRecord() {
@@ -99,12 +108,13 @@ public class TaxManagementPresenter {
     }
 
     public void saveOrUpdateTaxRecord() {
-        Long tfn = Long.valueOf(view.getTxtTFN().getText());
-        TaxPayer foundRecord = taxPayerRepo.findByTaxFileNumber(tfn);
-        if(foundRecord == null){
-            model = updateModelFromView();  
+        if(view.areRequiredFieldsFilled()){
+            model = updateModelFromView();
             taxPayerRepo.save(model);
-        }
+            showInfoDialog("Saved successfully");
+        } else {
+            showInfoDialog("Please fill all required fields");
+        }    
     }
     
     private TaxPayer updateModelFromView(){
@@ -115,11 +125,41 @@ public class TaxManagementPresenter {
         String phone = view.getTxtPhone().getText();
         Long income = Long.valueOf(view.getTxtIncome().getText());
         Long deductAmt = Long.valueOf(view.getTxtDeduct().getText());
-        Long taxHels = Long.valueOf(view.getTxttaxHeld().getText());
+        Long taxHels = Long.valueOf(view.getTxtTaxHeld().getText());
         Long taxToBeReturned = Long.valueOf(view.getTxtTaxToBeReturn().getText());
         model = new TaxPayer(tfn, firstName, lastName, address, phone, 
                 income, deductAmt, taxHels, taxToBeReturned);
         
         return model;
+    }
+    
+    public void generateTaxFileNumber(){
+        Long maxTFN = taxPayerRepo.findMaxTFN();
+        System.out.println(maxTFN);
+        view.setGeneratedTFN(String.valueOf(maxTFN+1));
+    }
+
+    private void showInfoDialog(String message) {
+        JOptionPane.showMessageDialog(this.view, message);
+    }
+
+    public void calculateTaxs() {
+        //validate empty income and deductible amount
+        if(view.getTxtIncome().getText().trim().isEmpty()){
+            showInfoDialog("Please input income");
+            return;
+        }
+        if(view.getTxtDeduct().getText().trim().isEmpty()){
+            showInfoDialog("Please input the deductiable amount, input 0 if not having");
+            return;
+        }
+        //caculate
+        model.setIncome(Long.valueOf(view.getTxtIncome().getText()));
+        model.setDeductibleAmount(Long.valueOf(view.getTxtDeduct().getText()));
+        Long taxHeld = model.getTaxHeld();
+        Long taxToBeReturned = model.getTaxToBeReturned();
+        //set values
+        view.getTxtTaxHeld().setText(String.valueOf(taxHeld));
+        view.getTxtTaxToBeReturn().setText(String.valueOf(taxToBeReturned));
     }
 }
