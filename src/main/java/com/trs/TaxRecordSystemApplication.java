@@ -1,26 +1,23 @@
 package com.trs;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
 import com.trs.entity.TaxPayer;
 import com.trs.presenter.TaxManagementPresenter;
 import com.trs.repo.TaxPayerRepository;
 import com.trs.ui.TaxManagementMainView;
-import java.sql.Connection;
 import javax.sql.DataSource;
-import javax.swing.JOptionPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import sun.awt.AppContext;
 
+/**
+ * This is the main class to launch the application
+ */
 @SpringBootApplication
 public class TaxRecordSystemApplication implements CommandLineRunner {
     @Autowired

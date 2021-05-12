@@ -11,6 +11,10 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * This is the presenter class which is used to connect model and view
+ * The logic of handling model attributes and the way they are shown into view are located here
+ */
 @Component
 public class TaxManagementPresenter {
     private TaxPayer model;

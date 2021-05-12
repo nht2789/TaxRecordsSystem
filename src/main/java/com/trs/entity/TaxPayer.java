@@ -4,36 +4,41 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * This is the model representing the table "taxpayers" in database where we manage the details
+ * of tax payers
+ * 
+ */
 @Entity
 @Table(name = "taxpayers")
 public class TaxPayer implements Comparable<TaxPayer>{
     
         @Id
-        @Column(unique = true, nullable = false)
+        @Column(name = "TFN", unique = true, nullable = false)
         private Long taxFileNumber;
         
-        @Column(nullable = false)
+        @Column(name = "FIRSTNAME" ,nullable = false)
 	private String firstName;
         
-        @Column(nullable = false)
+        @Column(name = "LASTNAME", nullable = false)
 	private String lastName;
-        @Column(nullable = false)
+        
+        @Column(name = "ADDRESS", nullable = false)
         private String address;
         
-        @Column(nullable = false)
+        @Column(name = "PHONE", nullable = false)
         private String phone;
 
-        @Column(nullable = false)
+        @Column(name = "INCOME", nullable = false)
         private Long income = 0L;
 
-        @Column(nullable = false)
+        @Column(name = "DEDUCTIBLE", nullable = false)
         private Long deductibleAmount = 0L;
         
-        @Column(nullable = false)
+        @Column(name = "TAXHELD", nullable = false)
         private Long taxHeld = 0L;
         
-        @Column(nullable = false)
+        @Column(name = "TAXRETURNED", nullable = false)
         private Long taxToBeReturned = 0L;
 
     public TaxPayer(Long taxFileNnumber, String firstName, String lastName, String address, String phone, Long income, Long deductibleAmount, Long taxHeld, Long taxToBeReturned) {
